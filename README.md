@@ -11,7 +11,7 @@ The primary goals of this example are to illustrate:
 - **Dynamic Configuration:** How to inject dynamically obtained backend service IPs into the frontend's JavaScript configuration during the CD process.
 - **GitHub Actions for CD:** Leveraging GitHub's native CI/CD platform for orchestrating deployments.
 
-## 🛠️ Prerequisites
+## 🛠️ Prerequisites:
 
 Before you begin, ensure you have the following:
 
