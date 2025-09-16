@@ -55,7 +55,7 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install dependencies and run code quality checks
+      - name: Install dependencies
         run: |
           pip install --upgrade pip
           for req in backend/*/requirements.txt; do
@@ -111,6 +111,9 @@ jobs:
 
     - name: Build and Push Frontend Image
       run: |
+        # ✅ This command ensures the entrypoint script is executable before building the image
+        chmod +x frontend/entrypoint.sh
+        
         docker build -t ${{ env.ACR_LOGIN_SERVER }}/frontend:${{ env.IMAGE_TAG }} ./frontend/
         docker push ${{ env.ACR_LOGIN_SERVER }}/frontend:${{ env.IMAGE_TAG }}
 
